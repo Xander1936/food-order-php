@@ -1,3 +1,7 @@
+<!-- Create Constants to store non Repeating Values; CONSTANTS are always named with Capital Letters and Variables with small letters.
+3. Execute Query and Save Data in Database to all the DASHBOARD pages-->
+<?php include('../config/constants.php'); ?>
+
 <html>
     <head>
         <title>Food Order Website</title>

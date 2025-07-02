@@ -63,10 +63,7 @@
 
         // echo $sql;
 
-        //3. Execute Query and Save Data in Database
-        $conn = mysqli_connect('localhost', 'root', '') or die(mysqli_error()); // Database Connection
-        $db_select = mysqli_select_db($conn, 'food-order') or die(mysqli_error()); // Selecting Database
-
+        
         // $res = mysqli_query($conn, $sql) or die(mysqli_error());
 
 

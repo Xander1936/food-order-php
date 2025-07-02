@@ -1,6 +1,10 @@
-<?php 
+<?php
+    // Start Session
+    session_start();
+
     // Create Constants to store non Repeating Values; CONSTANTS are always named with Capital Letters and Variables with small letters.
     //3. Execute Query and Save Data in Database
+        define('SITEURL', 'http://localhost/food-order/');
         define('LOCALHOST',  'localhost');
         define('DB_USERNAME', 'root');
         define('DB_PASSWORD', '');

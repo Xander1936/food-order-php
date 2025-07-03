@@ -36,6 +36,7 @@
                                 // Count Rows to check whether we have data in database or not
                                 $count = mysqli_num_rows($res); // Function to get all the rows in database
                                 
+                                // Admin frontend index
                                 $sn = 1; // Create a variable and assign the value 
 
                                 // Check the num of rows

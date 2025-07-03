@@ -2,6 +2,7 @@
     Author: Alexandre Massoda;
     Theme: Food Order Website Admin;
     Version: 1.0;
+    Color Palette: flatuicolors.com/palette/cn
 */
 
 *{
@@ -75,6 +76,13 @@ table tr td {
  }
  .btn-danger:hover {
     background-color: #ff4757;
+ }
+
+ .success {
+    color: #2ed573;
+ }
+ .error {
+    color: #ff4757;
  }
 
 /* CSS for Menu */

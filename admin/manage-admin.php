@@ -6,10 +6,16 @@
                 <h1>Manage Admin</h1>
                 <br><br>
 
-                <?php 
+                <?php
+                    // Managing session for the Add Button 
                     if(isset($_SESSION['add'])) {
                         echo $_SESSION['add']; // Displaying Session Message.
                         unset($_SESSION['add']); // Removing Session Message. 
+                    }
+                    // Managing session for the Button Delete
+                    if(isset($_SESSION['delete'])) {
+                        echo $_SESSION['delete']; // Displaying Session Message.
+                        unset($_SESSION['delete']); // Removing Session Message. 
                     }
                 ?>
                 <br><br>
@@ -61,7 +67,7 @@
                                             <td><?php echo $username; ?></td>
                                             <td>
                                                 <a href="#" class="btn-secondary">Update Admin</a>
-                                                <a href="#" class="btn-danger">Delete Admin</a>
+                                                <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
                                             </td>
                                         </tr>
 

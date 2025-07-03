@@ -62,7 +62,8 @@ table tr td {
     font-weight: bold;
 }
  .btn-secondary:hover {
-    background-color: #2ed573 ;
+    background-color: #2ed573;
+    color: white;
  }
 
  .btn-danger {

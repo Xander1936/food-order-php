@@ -10,7 +10,7 @@
             if(isset($_SESSION['add'])) // Checking whether the session is set or not
             {
                 echo $_SESSION['add']; // Display the session message if set.
-                unset $_SESSION['add']; // Removing Session message. 
+                unset ($_SESSION['add']); // Removing Session message. 
             }
         ?>
 

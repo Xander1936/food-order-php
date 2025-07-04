@@ -132,3 +132,11 @@ table tr td {
 .footer a:hover {
     color: pink;
 }
+
+/* CSS for Login */
+.login {
+    border: 1px solid grey;
+    width: 20%;
+    margin: 10px auto;
+    padding: 2px;
+}

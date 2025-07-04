@@ -7,20 +7,35 @@
                 <br><br>
 
                 <?php
-                    // Managing session for the Add Button 
+                    // Managing session for the Button Add Admin 
                     if(isset($_SESSION['add'])) {
                         echo $_SESSION['add']; // Displaying Session Message.
                         unset($_SESSION['add']); // Removing Session Message. 
                     }
-                    // Managing session for the Button Delete
+                    // Managing session for the Button Delete Admin
                     if(isset($_SESSION['delete'])) {
                         echo $_SESSION['delete']; // Displaying Session Message.
                         unset($_SESSION['delete']); // Removing Session Message. 
                     }
-                    // Managing session for the Button Update
+                    // Managing session for the Button Update Admin
                     if(isset($_SESSION['update'])) {
                         echo $_SESSION['update']; // Displaying Session Message.
                         unset($_SESSION['update']); // Removing Session Message.
+                    }
+                    // Managing session for the Button Update Password
+                    if(isset($_SESSION['user-not-found'])) {
+                        echo $_SESSION['user-not-found'];
+                        unset($_SESSION['user-not-found']);
+                    }
+                    // Managing session for the Password Did Not Match
+                    if(isset($_SESSION['pwd-not-match'])){
+                        echo $_SESSION['pwd-not-match'];
+                        unset($_SESSION['pwd-not-match']);
+                    }
+                    // Managing Session for the Password Match
+                    if(isset($_SESSION['change-pwd'])) {
+                        echo $_SESSION['change-pwd'];
+                        unset($_SESSION['change-pwd']);
                     }
                 ?>
                 <br><br>
@@ -71,6 +86,7 @@
                                             <td><?php echo $full_name; ?></td>
                                             <td><?php echo $username; ?></td>
                                             <td>
+                                                <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
                                                 <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
                                                 <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
                                             </td>

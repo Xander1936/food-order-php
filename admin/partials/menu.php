@@ -1,6 +1,12 @@
 <!-- Create Constants to store non Repeating Values; CONSTANTS are always named with Capital Letters and Variables with small letters.
 3. Execute Query and Save Data in Database to all the DASHBOARD pages-->
-<?php include('../config/constants.php'); ?>
+<?php 
+    include('../config/constants.php'); 
+    // Insert the login conditions before Access to the Admin Page
+    include('login-check.php');
+?>
+
+
 
 <html>
     <head>

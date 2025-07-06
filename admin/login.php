@@ -16,6 +16,11 @@
                     echo $_SESSION['login'];
                     unset($_SESSION['login']);
                 }
+
+                if(isset($_SESSION['no-login-message'])) {
+                    echo $_SESSION['no-login-message'];
+                    unset($_SESSION['no-login-message']);
+                }
             ?>
             <br><br>
             <!-- Login Form Starts Here -->
@@ -54,6 +59,9 @@
         if($count == 1) {
             // User Available and Login Success
             $_SESSION['login'] = "<div class='success'>Login Successfully.</div>";
+            // Create a Session to check whether the user is logged in or not and logout will unsets it.
+            $_SESSION['user'] = $username;
+            
             // Redirect to Homepage / Dashboard
             header('location:'.SITEURL.'admin/');
         }else {

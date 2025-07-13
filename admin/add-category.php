@@ -73,6 +73,7 @@
                 // echo "Clicked";
                 
                 // 1. Get the value from Category Form
+                // Used mysqli_real_escape_string() to sanitize the title input before using it in the SQL query.
                 $title = mysqli_real_escape_string($conn, $_POST['title']);
 
                 // For radio input, we need to check whether the button is selected or not

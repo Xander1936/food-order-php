@@ -12,6 +12,12 @@
                 echo $_SESSION['add'];
                 unset($_SESSION['add']);
             }
+
+            // Create a Session to Add image
+            if(isset($_SESSION['upload'])) {
+                echo $_SESSION['upload'];
+                unset($_SESSION['upload']);
+            }
         ?>
 
         <br><br>

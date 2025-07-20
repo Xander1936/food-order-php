@@ -18,6 +18,17 @@
                 echo $_SESSION['upload'];
                 unset($_SESSION['upload']);
             }
+            // Create a Session to Remove a Category Image
+            if(isset($_SESSION['remove'])) {
+                echo $_SESSION['remove'];
+                unset($_SESSION['remove']);
+            }
+
+            // Create a Session to Delete a Category
+            if(isset($_SESSION['delete'])) {
+                echo $_SESSION['delete'];
+                unset($_SESSION['delete']);
+            }
         ?>
 
         <br><br>
@@ -86,8 +97,8 @@
                                             <td><?php echo $featured; ?></td>
                                             <td><?php echo $active; ?></td>
                                             <td>
-                                                <a href="#" class="btn-secondary">Update Category</a>
-                                                <a href="#" class="btn-danger">Delete Category</a>
+                                                <a href="<?php echo SITEURL; ?>admin/update-category.php" class="btn-secondary">Update Category</a>
+                                                <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
                                             </td>
                                         </tr>
 

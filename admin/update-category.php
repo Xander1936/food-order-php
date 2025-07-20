@@ -98,12 +98,53 @@
 
                 <tr>
                     <td>
+                        <input type="hidden" name="current_image" value="<?php echo $current_image; ?>" >
+                        <input type="hidden" name="id" value="<?php echo $id; ?>" >
                         <input type="submit" name="submit" value="Update Category" class="btn-secondary">
                     </td>
                 </tr>
 
             </table>
         </form>
+        
+        <?php 
+            if(isset($_POST['submit'])) {
+                // echo 'Clicked.';
+                // 1. Get all the values from our Form
+                $id = $_POST['id'];
+                $title = $_POST['title'];
+                $current_image = $_POST['current_image'];
+                $featured = $_POST['featured'];
+                $active = $_POST['active'];
+
+                // 2. Updating New Image if Selected
+
+
+                // 3. Update the Database
+                $sql2 = "UPDATE tbl_category SET
+                    title = '$title',
+                    featured = '$featured',
+                    active = '$active'
+                    WHERE id=$id
+                ";
+                // Execute the Query
+                $res2 = mysqli_query($conn, $sql);
+
+                // 4. Redirect to Manage Category Page with Message
+                // Check whether executed or not
+                if($res2 == true) {
+                    // Category Updated
+                    $_SESSION['update'] = "<div class='success'>Category Updated Successfully.</div>";
+                    header('location:'.SITEURL.'admin/manage-category.php'); 
+                }else {
+                    // Failed to update category
+                    $_SESSION['update'] = "<div class='error'>Failed to Update Category.</div>";
+                    header('location:'.SITEURL.'admin/manage-category.php'); 
+                }
+
+            }
+        ?>
+
     </div>
 </div>
 

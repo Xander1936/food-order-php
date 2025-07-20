@@ -29,6 +29,17 @@
                 echo $_SESSION['delete'];
                 unset($_SESSION['delete']);
             }
+
+            if(isset($_SESSION['no-category-found'])) {
+                echo $_SESSION['no-category-found'];
+                unset($_SESSION['no-category-found']);
+            }
+
+            // Create a Session to Update Category
+            if(isset($_SESSION['update'])) {
+                echo $_SESSION['update'];
+                unset($_SESSION['update']);
+            }
         ?>
 
         <br><br>

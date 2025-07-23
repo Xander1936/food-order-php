@@ -86,6 +86,7 @@
 
                 <tr>
                     <td>
+                        <!-- Used htmlspecialchars() to escape output variables for better security. -->
                         <input type="hidden" name="current_image" value="<?php echo htmlspecialchars($current_image); ?>">
                         <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                         <input type="submit" name="submit" value="Update Category" class="btn-secondary">
@@ -138,6 +139,7 @@
                 }
 
                 // 3. Update the Database
+                // $sql2 in the query execution for updating the category
                 $sql2 = "UPDATE tbl_category SET
                     title = '$title',
                     image_name = '$image_name',
@@ -156,6 +158,7 @@
                     $_SESSION['update'] = "<div class='error'>Failed to Update Category.</div>";
                 }
                 header('location:'.SITEURL.'admin/manage-category.php'); 
+                // exit(); after each header() call to prevent further script execution
                 exit();
             }
         ?>

@@ -7,7 +7,17 @@
         <br><br>
                 <!-- Button to Add Admin -->
                  <a href="<?php echo SITEURL; ?>admin/add-food.php" class="btn-primary">Add Food</a>
+                 
                  <br><br><br>
+                
+                 <?php
+                    // Create a Session to Add Food Into Database "tbl_food" table 
+                    if(isset($_SESSION['add'])){
+                        echo $_SESSION['add'];
+                        unset($_SESSION['add']);
+                    }
+                 ?>
+
                  <table class="tbl-full">
                      <tr>
                          <th>S.N.</th>

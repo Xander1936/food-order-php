@@ -27,9 +27,9 @@
                         unset($_SESSION['upload']);
                     }
 
-                    if(isset($_SESSION['unauthorized'])){
-                        echo $_SESSION['unauthorized'];
-                        unset($_SESSION['unauthorized']);
+                    if(isset($_SESSION['update'])){
+                        echo $_SESSION['update'];
+                        unset($_SESSION['update']);
                     }
                  ?>
 

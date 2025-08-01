@@ -181,7 +181,7 @@
                         }
                     }
                 } else {
-                    // If no new image is uploaded, use the current image
+                    // Default Image: If no new image is uploaded, use the current image
                     $image_name = $current_image; 
                 }
 
@@ -198,7 +198,7 @@
                 ";
 
                 // Execute the SQL query
-                $res3 = mysqli_query($conn, $sql3);
+                $res3 = mysqli_query($conn, $sql3); 
 
                 // Check if the update was successful
                 if($res3 == true) {

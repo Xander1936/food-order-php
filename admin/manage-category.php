@@ -35,7 +35,7 @@
                 unset($_SESSION['no-category-found']);
             }
 
-            // Create a Session to Update Category
+            // Create a Session to Update Category in the Database
             if(isset($_SESSION['update'])) {
                 echo $_SESSION['update'];
                 unset($_SESSION['update']);

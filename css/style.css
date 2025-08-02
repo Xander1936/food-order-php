@@ -144,7 +144,8 @@ fieldset{
     padding: 4% 0;
 }
 .food-menu-box{
-    width: 43%;
+    width: 40%;
+    height: 30%;
     margin: 1%;
     padding: 2%;
     float: left;

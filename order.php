@@ -1,5 +1,41 @@
 <?php include("../food-order/partials-front/menu.php"); ?>
 
+    <?php
+        // Check whether food id is set or not
+        if(isset($_GET['food_id'])) {
+            // Get the Food id and details of the selected food
+            $food_id = $_GET['food_id'];
+
+            // Get the details of the Selected Food
+            $sql = "SELECT * FROM tbl_food WHERE id=$food_id";
+
+            // Execute the Query
+            $res = mysqli_query($conn, $sql);
+            
+            // Count the Rows
+            $count = mysqli_num_rows($res);
+
+            // Check whether the data is available or not
+            if($count == 1) {
+                // We have data
+                // Get the Data from Database
+                $row = mysqli_fetch_assoc($res);
+
+                $title = $row['title'];
+                $price = $row['price'];
+                $image_name = $row['image_name'];
+
+            }else {
+                // Redirect to the Homepage
+                header('location:'.SITEURL);
+            }
+
+        }else {
+            // Redirect to homepage
+            header('location:'.SITEURL);
+        }
+    ?>
+
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search">
         <div class="container">
@@ -11,12 +47,24 @@
                     <legend>Selected Food</legend>
 
                     <div class="food-menu-img">
-                        <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                        <?php 
+                            // Check whether the i;age is available or not
+                            if($image_name == "") {
+                                // Image Not Available; just display the message
+                                echo "<div class='error'>Image Not Available.</div>"; 
+                            }else {
+                                // Image is Available
+                                ?>
+                                <img src="<?php echo SITEURL; ?>/images/food/<?php echo $image_name; ?>" alt="" class="img-responsive img-curve" height="110px" >
+                                <?php
+                            }
+
+                        ?>
                     </div>
     
                     <div class="food-menu-desc">
-                        <h3>Food Title</h3>
-                        <p class="food-price">$2.3</p>
+                        <h3><?php echo $title; ?></h3>
+                        <p class="food-price">$<?php echo $price; ?></p>
 
                         <div class="order-label">Quantity</div>
                         <input type="number" name="qty" class="input-responsive" value="1" required>

@@ -64,11 +64,13 @@ a:hover{
     background-color: #ff4757;
 }
 
-.success {
+.success.text-center {
     color: #2ed573;
+    padding: 2%;
  }
- .error {
+.error.text-center {
     color: #ff4757;
+    padding: 2%;
  }
 
 h2{

@@ -5,9 +5,18 @@
         <h1>Manage Order</h1>
 
         <br><br><br>
+        
+        <?php 
+            if(isset($_SESSION['update'])) {
+              echo $_SESSION['update'];
+              unset($_SESSION['update']);
+            } 
+        
+        ?>
+        <br><br>
 
-                 <table class="tbl-full">
-                    <tr>
+        <table class="tbl-full">
+            <tr>
                          <th>S.N.</th>
                          <th>Food</th>
                          <th>Price</th>
@@ -20,9 +29,9 @@
                          <th>Email</th>
                          <th>Address</th>
                          <th>Actions</th>
-                    </tr>
+            </tr>
 
-                    <?php 
+            <?php 
                         // Get all the Orders from Database by Descending id
                         $sql = "SELECT * FROM tbl_order ORDER BY id DESC"; // Display the Latest Order at First
                         // Execute Query
@@ -57,13 +66,28 @@
                                         <td><?php echo $qty; ?></td>
                                         <td><?php echo $total; ?></td>
                                         <td><?php echo $order_date; ?></td>
-                                        <td><?php echo $status; ?></td>
+
+                                        <td>
+                                            <?php 
+                                                // Order Status: Ordered, On Delivery, Delivered, Cancelled
+                                                if($status == "Ordered") {
+                                                    echo "<label>$status</label>"; 
+                                                }elseif($status == "On Delivery") {
+                                                    echo "<label style='color: orange;' >$status</label>"; 
+                                                }elseif($status == "Delivered") {
+                                                    echo "<label style='color: green;' >$status</label>"; 
+                                                }elseif($status == "Cancelled") {
+                                                    echo "<label style='color: red;'>$status</label>"; 
+                                                }
+                                            ?>
+                                        </td>
+
                                         <td><?php echo $customer_name; ?></td>
                                         <td><?php echo $customer_contact; ?></td>
                                         <td><?php echo $customer_email; ?></td>
                                         <td><?php echo $customer_address; ?></td>
                                         <td>
-                                            <a href="#" class="btn-secondary">Update Order</a>
+                                            <a href="<?php echo SITEURL; ?>admin/update-order.php?id=<?php echo $id; ?>" class="btn-secondary">Update Order</a>
                                         </td>
                                     </tr>
                                 <?php
@@ -74,11 +98,11 @@
                             echo "<div class='error'>Orders Not Available</div>"; 
                         }
 
-                    ?>
+            ?>
                         
                     
 
-                </table>
+        </table>
     </div>
 </div>
 

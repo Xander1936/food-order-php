@@ -7,7 +7,9 @@
             <?php 
             
                 // Get the Search Keyword
-                $search = $_POST['search']; 
+                // $search = $_POST['search']; 
+                $search = mysqli_real_escape_string($conn, $_POST['search']); 
+            
             
             ?>
 
@@ -29,6 +31,8 @@
             <?php 
 
                 // SQL Query to Get foods based on search keyword
+                // $search = burger"
+                // "SELECT * FROM tbl_food WHERE title LIKE '%%' OR description like '%%' ";
                 $sql = "SELECT * FROM tbl_food WHERE title LIKE '%$search' OR description LIKE '%$search' ";
 
                 // Execute the Query

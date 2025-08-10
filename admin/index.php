@@ -1,6 +1,7 @@
 <?php include("partials/menu.php"); ?>
 
-        <?php 
+        <?php
+            // Security Homework: 
             // Use mysqli_real_escape_string() on all the website's inputs for the security to prevent attacks by SQL injection 
             // $input_name = mysqli_real_escape_string($conn, $_POST['input_name']);
         ?>

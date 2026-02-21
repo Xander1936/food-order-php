@@ -22,6 +22,7 @@
             <h2 class="text-center">Food Menu</h2>
             
             <?php
+                // Create SQL Query to Get all the Food from Database
                 // Display Foods that are Active
                 $sql = "SELECT * FROM tbl_food WHERE active='Yes' ";
 
